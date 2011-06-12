@@ -1,0 +1,21 @@
+<?php
+class AppController extends Controller {
+	var $helpers = array('Html', 'Form', 'Javascript');
+
+
+	function beforeFilter() {
+		$this->app = $this->Session->read();   
+//        if ($this->params['admin'] == true) {
+      if($this->Session->check('User') == false) {
+      	$this->redirect('/users');
+         $this->Session->setFlash('The URL you\'ve followed requires you login.');
+      }
+ //           $this->layout = 'admin';
+ //       }
+   }
+
+	function beforeRender() {
+//		$this->set('app', $this->app);
+	}
+}
+?>

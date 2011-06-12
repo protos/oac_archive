@@ -1,0 +1,131 @@
+<?php
+class AudioAlbum extends AppModel {
+
+	var $name = 'AudioAlbum';
+   
+
+	var $validate = array(
+		'audio_album_type_id' => array('numeric'),
+		'oac_ref_no' => array('notempty'),
+		'title' => array('notempty'),
+		'login_level_id' => array('numeric'),
+		'compiler_id' => array('numeric')
+	);
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+	var $belongsTo = array(
+		'AudioAlbumType' => array(
+			'className' => 'AudioAlbumType',
+			'foreignKey' => 'audio_album_type_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'LoginLevel' => array(
+			'className' => 'LoginLevel',
+			'foreignKey' => 'login_level_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Compiler' => array(
+			'className' => 'Compiler',
+			'foreignKey' => 'compiler_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+	var $hasOne = array(
+		'AudioTrack' => array(
+			'className' => 'AudioTrack',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Document' => array(
+			'className' => 'Document',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Photograph' => array(
+			'className' => 'Photograph',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'VideoAlbum' => array(
+			'className' => 'VideoAlbum',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+	var $hasMany = array(
+		'AudioTrack' => array(
+			'className' => 'AudioTrack',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Document' => array(
+			'className' => 'Document',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Photograph' => array(
+			'className' => 'Photograph',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'VideoAlbum' => array(
+			'className' => 'VideoAlbum',
+			'foreignKey' => 'audio_album_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
+}
+?>

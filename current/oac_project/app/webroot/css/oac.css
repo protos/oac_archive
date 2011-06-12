@@ -1,0 +1,16 @@
+#record_type {
+	display:none;
+}
+
+#other_compiler {
+	display:none;
+}
+
+.sub_header {
+	color: blue;
+	font-size: 17px;
+}
+
+.menu_entries a {
+	font-size: 14px;
+}
