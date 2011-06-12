@@ -54,10 +54,17 @@
 		<div id="content">
 			<?php $session->flash(); ?>
 			<?php
-				$tmp = $session->read('User');
-                print_r ($tmp);
-				echo "<br/>Logged in as " . $tmp['username'] . " | " . $html->link('Logout', array('controller' => 'Users', 'action' => 'logout'));
-                echo "&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;" . $html->link('Return to main menu', array('controller' => 'Users', 'action' => 'index'));
+                $tmp = $session->read('User');
+			
+                if ($tmp['username']) {
+
+ //                   print_r ($tmp);
+                    
+                    echo "<br/>Logged in as " . $tmp['username'] .
+                        " " . $html->link('Logout', array('controller' => 'Users', 'action' => 'logout')) .
+                        "&nbsp;&nbsp;|&nbsp;&nbsp;" .
+                        $html->link('Main Menu', array('controller' => 'Users', 'action' => 'index'));
+                }
             ?>
 			<?php echo $content_for_layout; ?>
 

@@ -20,12 +20,12 @@ class UsersController extends AppController
         {
             if(($user = $this->User->validateLogin($this->data['User'])) == true)
             {
-                // $this->Session->write('User', $user);
-                // $this->Session->write('Colm', 'COLM');
+                $this->Session->write('User', $user);
+                $this->Session->write('Colm', 'COLM');
 		
                 // print_r($this -> Session -> read());
                 // $tmp = $this->Session->read('User');
-                $this->Session->setFlash('Hello ' . $this->data ['User']['username'] . ' You\'ve successfully logged in.');
+                // $this->Session->setFlash('Hello ' . $tmp['username'] . ' You\'ve successfully logged in.');
 
                 $this->redirect('index');
                 exit();

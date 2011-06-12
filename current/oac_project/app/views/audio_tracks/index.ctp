@@ -30,8 +30,8 @@ echo $paginator->counter(array(
 <!--
     <th><?php echo $paginator->sort('synonyms');?></th>
 	<th><?php echo $paginator->sort('keywords');?></th>
-	<th><?php echo $paginator->sort('audio_album_id');?></th>
 -->
+	<th><?php echo $paginator->sort('audio_album_id');?></th>
     <th><?php echo $paginator->sort('created');?></th>
 	<th><?php echo $paginator->sort('modified');?></th>
 	<th class="actions"><?php __('Actions');?></th>
@@ -97,10 +97,14 @@ foreach ($audioTracks as $audioTrack):
 		<td>
 			<?php echo $audioTrack['AudioTrack']['keywords']; ?>
 		</td>
-		<td>
-			<?php echo $audioTrack['AudioTrack']['audio_album_id']; ?>
-		</td>
 -->
+        <td>
+			<?php echo
+                $html->link(__($audioTrack['AudioAlbum']['title'], true),
+                array('controller'=>'AudioAlbums', 'action'=>'view', $audioTrack['AudioAlbum']['id']));
+            ?>
+		</td>
+
         <td>
 			<?php echo $audioTrack['AudioTrack']['created']; ?>
 		</td>
