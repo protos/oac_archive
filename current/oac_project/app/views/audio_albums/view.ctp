@@ -1,5 +1,5 @@
 <div class="audioAlbums view">
-<h2><?php  __('AudioAlbum');?></h2>
+<h2><?php  echo $audioAlbum['AudioAlbum']['title']; ?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -113,7 +113,11 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Artists Url'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['artists_url']; ?>
+            <?php
+                echo $html->link($audioAlbum['AudioAlbum']['artists_url'],
+                             $audioAlbum['AudioAlbum']['artists_url'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Recording Engineer'); ?></dt>
@@ -148,12 +152,20 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Digital Artefact Link'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['digital_artefact_link']; ?>
-			&nbsp;
+            <?php
+                echo $html->link($audioAlbum['AudioAlbum']['digital_artefact_link'],
+                             $audioAlbum['AudioAlbum']['digital_artefact_link'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
+            &nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Oac Shop Url'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['oac_shop_url']; ?>
+            <?php
+                echo $html->link($audioAlbum['AudioAlbum']['oac_shop_url'],
+                             $audioAlbum['AudioAlbum']['oac_shop_url'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Login Level Id'); ?></dt>

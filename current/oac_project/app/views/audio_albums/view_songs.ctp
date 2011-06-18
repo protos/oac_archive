@@ -1,6 +1,5 @@
 <div class="audioTracks index">
-<h2><?php __('AudioTracks');?></h2>
-<p>
+<h2><?php echo $audioTracks[0]['AudioAlbum']['title'];?></h2>
 <table cellpadding="0" cellspacing="0">
 <tr>
     <th><?php echo 'track_no';?></th>

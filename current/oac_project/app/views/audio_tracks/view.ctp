@@ -1,5 +1,5 @@
 <div class="audioTracks view">
-<h2><?php  __('AudioTrack');?></h2>
+<h2><?php  echo $audioTrack['AudioTrack']['title'];?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -63,7 +63,11 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Digital Artefact Link'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioTrack['AudioTrack']['digital_artefact_link']; ?>
+            <?php
+                echo $html->link($audioTrack['AudioTrack']['digital_artefact_link'],
+                             $audioTrack['AudioTrack']['digital_artefact_link'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Synonyms'); ?></dt>
@@ -76,9 +80,13 @@
 			<?php echo $audioTrack['AudioTrack']['keywords']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Audio Album Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioTrack['AudioTrack']['audio_album_id']; ?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Album'); ?></dt>
+		<dd
+        <?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo
+                $html->link(__($audioTrack['AudioAlbum']['title'], true),
+                    array('controller'=>'AudioAlbums', 'action'=>'view', $audioTrack['AudioAlbum']['id']));
+            ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>

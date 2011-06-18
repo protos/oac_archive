@@ -14,3 +14,24 @@
 .menu_entries a {
 	font-size: 14px;
 }
+
+dl {
+    line-height: 27px;
+    font-size: 13px;
+}
+
+dd {
+    margin-left: 220px;
+}
+
+dt.altrow {
+    background: #f4f4f4;
+}
+
+dd.altrow {
+    background: #f4f4f4;
+}
+
+div.actions {
+    padding: 25px 0px;
+}
