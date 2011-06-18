@@ -5,7 +5,6 @@ class AudioAlbumsController extends AppController {
 	var $helpers = array('Html', 'Form', 'Javascript');
 
 	function index() {
-//		$this->Session->setFlash(__('TEST', true));
 		$this->AudioAlbum->recursive = 0;
 		$this->set('audioAlbums', $this->paginate());
 	}
@@ -16,39 +15,17 @@ class AudioAlbumsController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		$this->set('audioAlbum', $this->AudioAlbum->read(null, $id));
-/*
-         "SELECT count( * ) FROM `audio_albums` WHERE audio_album_type_id =1"
-*/
 	}
 
     function viewSongs($id) {
-		// $this->Session->setFlash(__('Invalid A udioAlbum. ' . $id, true));
-
         if(isset($id) && $id != null) {
-    		//$this->Session->setFlash(__('Invalid A udioA lbum. ' . $id, true));
-
-            /*
-            $albums = $this->AudioAlbum->find('first',
-                array('conditions'=>array('AudioAlbum.id'=>$id)));
-            $songs = $this->AudioAlbum->AudioTrack->find('all',
-                array('conditions'=>array('AudioTrack.audio_album_id'=>$id)));
-            // This returns variables to the view to use
-            $this->set(compact('albums', 'songs'));
-*/
-
             $opts = array(
                 'conditions' => array(
                 'audio_album_id' => $id
             ));
             $albumTracks = $this->AudioAlbum->AudioTrack->find('all', $opts);
-            //$this->Session->setFlash(__('Invalid A udioA lbu.' . $albumTracks, true));
             $this->set('audioTracks', $albumTracks);
         }
-
-
-
-        // $this->Session->setFlash(__('Invalid AudioTrack.' . $this->AudioTrack, true));
-
 	}
 
 	function add() {
@@ -61,10 +38,6 @@ class AudioAlbumsController extends AppController {
 				$this->Session->setFlash(__('The AudioAlbum could not be saved. Please, try again.', true));
 			}
 		}
-
- //       $total_num_rows = count($this->AudioAlbum->find('count')); 
- //       print_r("sss : ". $total_num_rows);
-
 
 		$audioAlbumTypes = $this->AudioAlbum->AudioAlbumType->find('list');
 		$loginLevels = $this->AudioAlbum->LoginLevel->find('list');
