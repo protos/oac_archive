@@ -26,21 +26,32 @@ foreach ($audioAlbums as $audioAlbum):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
-			<?php echo $audioAlbum['AudioAlbum']['title']; ?>
-		</td>
+            <?php echo $html->link(__($audioAlbum['AudioAlbum']['title'], true),
+                    array('action'=>'viewSongs',
+                          $audioAlbum['AudioAlbum']['id']));
+            ?>
+        </td>
 		<td>
 			<?php echo $audioAlbum['AudioAlbum']['description']; ?>
 		</td>
 		<td>
 			<?php echo $audioAlbum['AudioAlbum']['artists']; ?>
 		</td>
-		<td>
-			<?php echo $audioAlbum['AudioAlbum']['digital_artefact_link']; ?>
-		</td>
-		<td>
-			<?php echo $audioAlbum['AudioAlbum']['oac_shop_url']; ?>
-		</td>
-		<td class="actions">
+        <td>
+			<?php
+            echo $html->link($audioAlbum['AudioAlbum']['digital_artefact_link'],
+                             $audioAlbum['AudioAlbum']['digital_artefact_link'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
+        </td>
+        <td>
+			<?php
+            echo $html->link($audioAlbum['AudioAlbum']['oac_shop_url'],
+                             $audioAlbum['AudioAlbum']['oac_shop_url'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
+        </td>
+        <td class="actions">
 			<?php echo $html->link(__('View', true), array('action'=>'view', $audioAlbum['AudioAlbum']['id'])); ?>
 			<?php echo $html->link(__('Edit', true), array('action'=>'edit', $audioAlbum['AudioAlbum']['id'])); ?>
 			<?php echo $html->link(__('Delete', true), array('action'=>'delete', $audioAlbum['AudioAlbum']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $audioAlbum['AudioAlbum']['id'])); ?>

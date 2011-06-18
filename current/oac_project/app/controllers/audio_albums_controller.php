@@ -21,6 +21,36 @@ class AudioAlbumsController extends AppController {
 */
 	}
 
+    function viewSongs($id) {
+		// $this->Session->setFlash(__('Invalid A udioAlbum. ' . $id, true));
+
+        if(isset($id) && $id != null) {
+    		//$this->Session->setFlash(__('Invalid A udioA lbum. ' . $id, true));
+
+            /*
+            $albums = $this->AudioAlbum->find('first',
+                array('conditions'=>array('AudioAlbum.id'=>$id)));
+            $songs = $this->AudioAlbum->AudioTrack->find('all',
+                array('conditions'=>array('AudioTrack.audio_album_id'=>$id)));
+            // This returns variables to the view to use
+            $this->set(compact('albums', 'songs'));
+*/
+
+            $opts = array(
+                'conditions' => array(
+                'audio_album_id' => $id
+            ));
+            $albumTracks = $this->AudioAlbum->AudioTrack->find('all', $opts);
+            //$this->Session->setFlash(__('Invalid A udioA lbu.' . $albumTracks, true));
+            $this->set('audioTracks', $albumTracks);
+        }
+
+
+
+        // $this->Session->setFlash(__('Invalid AudioTrack.' . $this->AudioTrack, true));
+
+	}
+
 	function add() {
 		if (!empty($this->data)) {
 			$this->AudioAlbum->create();

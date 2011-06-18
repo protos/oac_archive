@@ -88,8 +88,12 @@ foreach ($audioTracks as $audioTrack):
 		</td>
 -->
         <td>
-			<?php echo $audioTrack['AudioTrack']['digital_artefact_link']; ?>
-		</td>
+			<?php
+            echo $html->link($audioTrack['AudioTrack']['digital_artefact_link'],
+                             $audioTrack['AudioTrack']['digital_artefact_link'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
+        </td>
 <!--
         <td>
 			<?php echo $audioTrack['AudioTrack']['synonyms']; ?>
@@ -101,10 +105,9 @@ foreach ($audioTracks as $audioTrack):
         <td>
 			<?php echo
                 $html->link(__($audioTrack['AudioAlbum']['title'], true),
-                array('controller'=>'AudioAlbums', 'action'=>'view', $audioTrack['AudioAlbum']['id']));
+                    array('controller'=>'AudioAlbums', 'action'=>'view', $audioTrack['AudioAlbum']['id']));
             ?>
 		</td>
-
         <td>
 			<?php echo $audioTrack['AudioTrack']['created']; ?>
 		</td>
