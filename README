@@ -1,3 +1,18 @@
 source for oac_archive project.
-cakephp project. Needs XAMPP-1.7.1
+cakephp project. 
+
+Developed using XAMPP-1.7.1. : 
+ 
+Platform PHP Version : 5.2.9
+Platform MySQL Server Version: 5.1.33
+ 
+
+Steps for install.
+Get XAMPP-1.7.1 or equivalant, up and running.
+import the sql scripts into the mysql DB in the following order :
+
+oac_schema.sql
+oac_populate.sql
+
+Copy the oac_project/ folder onto the WebServer filesystem
 
