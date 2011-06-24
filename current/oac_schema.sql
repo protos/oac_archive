@@ -12,9 +12,9 @@ DROP TABLE IF EXISTS `oac_archive`.`users` ;
 
 CREATE  TABLE IF NOT EXISTS `oac_archive`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `username` VARCHAR(20) NOT NULL ,
+  `username` VARCHAR(50) NOT NULL ,
   `full_name` VARCHAR(40) NOT NULL ,
-  `password` VARCHAR(50) NOT NULL ,
+  `password` VARCHAR(40) NOT NULL ,
   `view_level_flag` INT NULL ,
   `created` DATETIME NULL ,
   `modified` DATETIME NULL ,

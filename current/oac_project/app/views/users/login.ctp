@@ -1,8 +1,11 @@
 <div class="login">
 <h2>Login</h2>    
-    <?php echo $form->create('User', array('action' => 'login'));?>
-        <?php echo $form->input('username');?>
-        <?php echo $form->input('password');?>
-        <?php echo $form->submit('Login');?>
-    <?php echo $form->end(); ?>
+    <?php 
+        echo $session->flash('auth');
+        echo $form->create('User', array('action' => 'login'));
+        echo $form->input('username');
+        echo $form->input('password');
+        echo $form->submit('Login');
+        echo $form->end();
+    ?>
 </div> 

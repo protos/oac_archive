@@ -2,10 +2,10 @@ USE `oac_archive`;
 
 START TRANSACTION;
 
-insert into users (username, full_name, password) values ("b_taylor", "B_Taylor", MD5('oac'));
+insert into users (username, full_name, password) values ("b_taylor", "B Taylor", MD5('oac'));
 insert into users (username, full_name, password) values ("d_de_barra", "Donal De Barra", MD5('oac'));
-insert into users (username, full_name, password) values ("j_carroll", "J_Carroll", MD5('oac'));
-insert into users (username, full_name, password) values ("p_laban", "P_Laban", MD5('oac'));
+insert into users (username, full_name, password) values ("j_carroll", "J Carroll", MD5('oac'));
+insert into users (username, full_name, password) values ("p_laban", "P Laban", MD5('oac'));
 insert into users (username, full_name, password) values ("other", "Other", MD5('oac'));
 
 
