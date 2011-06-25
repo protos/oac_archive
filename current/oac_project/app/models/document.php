@@ -2,6 +2,7 @@
 class Document extends AppModel {
 
 	var $name = 'Document';
+    var $actsAs = array('Searchable.Searchable');
 	var $validate = array(
 		'oac_ref_no' => array('notempty'),
 		'doc_type_id' => array('numeric'),

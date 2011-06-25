@@ -45,13 +45,13 @@
     
 	<div id="container">
 	
-            <div id="header">
-		<?php
-                    echo $html->link(
+        <div id="header">
+            <?php
+                echo $html->link(
                 	$html->image('title.gif', array('alt'=> __("OaC Archive Application", true), 'border'=>"0")),
-			'http://www.oac.ie/',
-			array('target'=>'_blank'), null, false
-                    );
+                    'http://www.oac.ie/',
+                    array('target'=>'_blank'), null, false
+                );
 		?>
             </div>
             <div id="content">
@@ -64,6 +64,9 @@
                             $html->link('Logout', array('controller' => 'Users', 'action' => 'logout')) .
                             "&nbsp;&nbsp;|&nbsp;&nbsp;" .
                             $html->link('Main Menu', array('controller' => 'Dashboard', 'action' => 'index'));
+                    
+                        echo $this->element('form', array('plugin' => 'searchable'));
+
                     }
                     echo $content_for_layout; 
                 ?>

@@ -17,5 +17,13 @@ class DATABASE_CONFIG {
 		'password' => '',
 		'database' => 'oac_archive',
 	);
+	var $oac = array(
+		'driver' => 'mysql',
+		'persistent' => true,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => '',
+		'database' => 'oac_archive',
+	);
 }
 ?>

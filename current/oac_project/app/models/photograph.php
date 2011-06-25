@@ -2,6 +2,7 @@
 class Photograph extends AppModel {
 
 	var $name = 'Photograph';
+    var $actsAs = array('Searchable.Searchable');
 	var $validate = array(
 		'oac_ref_no' => array('notempty'),
 		'photo_type_id' => array('numeric'),

@@ -2,6 +2,7 @@
 class Map extends AppModel {
 
 	var $name = 'Map';
+    var $actsAs = array('Searchable.Searchable');
 	var $validate = array(
 		'oac_ref_no' => array('notempty'),
 		'map_type_id' => array('numeric'),

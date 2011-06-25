@@ -2,7 +2,7 @@
 class AudioAlbum extends AppModel {
 
 	var $name = 'AudioAlbum';
-   
+    var $actsAs = array('Searchable.Searchable');
 
 	var $validate = array(
 		'audio_album_type_id' => array('numeric'),

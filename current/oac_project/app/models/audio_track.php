@@ -2,6 +2,7 @@
 class AudioTrack extends AppModel {
 
 	var $name = 'AudioTrack';
+    var $actsAs = array('Searchable.Searchable');
 	var $validate = array(
 		'track_no' => array('numeric'),
 		'audio_album_id' => array('numeric')

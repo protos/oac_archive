@@ -2,6 +2,7 @@
 class VideoTrack extends AppModel {
 
 	var $name = 'VideoTrack';
+    var $actsAs = array('Searchable.Searchable');
 	var $validate = array(
 		'track_no' => array('numeric'),
 		'video_album_id' => array('numeric')

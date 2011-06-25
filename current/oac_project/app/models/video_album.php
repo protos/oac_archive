@@ -2,6 +2,7 @@
 class VideoAlbum extends AppModel {
 
 	var $name = 'VideoAlbum';
+    var $actsAs = array('Searchable.Searchable');
 	var $validate = array(
 		'video_type_id' => array('numeric'),
 		'oac_ref_no' => array('notempty'),
