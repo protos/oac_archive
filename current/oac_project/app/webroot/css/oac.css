@@ -37,5 +37,16 @@ div.actions {
 }
 
 #SearchSearch {
-    width: 150px;
+    width: 98%;
+    padding:0px;
+}
+
+.searchBox {
+    float:right;
+    clear:both;
+}
+
+.SearchLabel {
+    /* display:none; */
+    width: 200px;
 }

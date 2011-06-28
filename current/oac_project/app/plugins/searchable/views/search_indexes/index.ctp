@@ -1,9 +1,17 @@
 <h2>Search results</h2>
 <?php
 echo $form->create('SearchIndex', array('url' => array('plugin' => 'searchable', 'controller' => 'search_indexes', 'action' => 'index')));
-echo $form->input('term', array('label' => 'Search'));
+echo $form->input('term', array('label' => 'Search', 'class' => 'SearchLabel'));
 echo $form->input('type', array('empty' => 'All',));
-echo $form->end('View Search Results');
+
+$options = array(
+    'label' => 'New Search',
+    'name' => 'NewSearch',
+    'div' => array(
+        'class' => 'NewSearch',
+    ));
+
+echo $form->end($options);
 ?>
 <?php if (!empty($results)): ?>
   <ul>

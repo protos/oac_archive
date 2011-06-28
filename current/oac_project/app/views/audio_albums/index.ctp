@@ -10,7 +10,6 @@ echo $paginator->counter(array(
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $paginator->sort('title');?></th>
-	<th><?php echo $paginator->sort('description');?></th>
 	<th><?php echo $paginator->sort('artists');?></th>
 	<th><?php echo $paginator->sort('digital_artefact_link');?></th>
 	<th><?php echo $paginator->sort('oac_shop_url');?></th>
@@ -31,9 +30,6 @@ foreach ($audioAlbums as $audioAlbum):
                           $audioAlbum['AudioAlbum']['id']));
             ?>
         </td>
-		<td>
-			<?php echo $audioAlbum['AudioAlbum']['description']; ?>
-		</td>
 		<td>
 			<?php echo $audioAlbum['AudioAlbum']['artists']; ?>
 		</td>

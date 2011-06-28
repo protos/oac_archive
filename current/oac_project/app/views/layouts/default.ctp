@@ -64,9 +64,9 @@
                             $html->link('Logout', array('controller' => 'Users', 'action' => 'logout')) .
                             "&nbsp;&nbsp;|&nbsp;&nbsp;" .
                             $html->link('Main Menu', array('controller' => 'Dashboard', 'action' => 'index'));
-                    
+                        echo "<span class='searchBox'>";
                         echo $this->element('form', array('plugin' => 'searchable'));
-
+                        echo "</span>";
                     }
                     echo $content_for_layout; 
                 ?>
