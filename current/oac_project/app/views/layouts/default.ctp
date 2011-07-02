@@ -61,9 +61,9 @@
                     if ($user['User']['username']) {
                         echo "<br/>Logged in as <b>" . $user['User']['full_name'] .
                             "</b>&nbsp;&nbsp;&nbsp;&nbsp;" . 
-                            $html->link('Logout', array('controller' => 'Users', 'action' => 'logout')) .
+                            $html->link('Logout', '/Users/logout') .
                             "&nbsp;&nbsp;|&nbsp;&nbsp;" .
-                            $html->link('Main Menu', array('controller' => 'Dashboard', 'action' => 'index'));
+                            $html->link('Main Menu', '/Dashboard/index');
                         echo "<span class='searchBox'>";
                         echo $this->element('form', array('plugin' => 'searchable'));
                         echo "</span>";

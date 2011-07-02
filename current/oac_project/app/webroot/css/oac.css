@@ -50,3 +50,7 @@ div.actions {
     /* display:none; */
     width: 200px;
 }
+
+.SearchResultDetail {
+    font: normal 12px sans-serif;
+}
