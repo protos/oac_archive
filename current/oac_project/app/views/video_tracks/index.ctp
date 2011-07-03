@@ -8,24 +8,13 @@ echo $paginator->counter(array(
 ?></p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $paginator->sort('id');?></th>
 	<th><?php echo $paginator->sort('track_no');?></th>
 	<th><?php echo $paginator->sort('title');?></th>
 	<th><?php echo $paginator->sort('primary_performers');?></th>
 	<th><?php echo $paginator->sort('primary_instruments');?></th>
 	<th><?php echo $paginator->sort('genre');?></th>
-	<th><?php echo $paginator->sort('duration');?></th>
-	<th><?php echo $paginator->sort('composer');?></th>
-	<th><?php echo $paginator->sort('performance_date');?></th>
-	<th><?php echo $paginator->sort('copyright_holders');?></th>
-	<th><?php echo $paginator->sort('copyright_start_date');?></th>
-	<th><?php echo $paginator->sort('comments');?></th>
-	<th><?php echo $paginator->sort('keywords');?></th>
 	<th><?php echo $paginator->sort('digital_artefact_link');?></th>
 	<th><?php echo $paginator->sort('video_album_id');?></th>
-	<th><?php echo $paginator->sort('synonyms');?></th>
-	<th><?php echo $paginator->sort('created');?></th>
-	<th><?php echo $paginator->sort('modified');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
 <?php
@@ -37,9 +26,6 @@ foreach ($videoTracks as $videoTrack):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['id']; ?>
-		</td>
 		<td>
 			<?php echo $videoTrack['VideoTrack']['track_no']; ?>
 		</td>
@@ -56,40 +42,17 @@ foreach ($videoTracks as $videoTrack):
 			<?php echo $videoTrack['VideoTrack']['genre']; ?>
 		</td>
 		<td>
-			<?php echo $videoTrack['VideoTrack']['duration']; ?>
+			<?php
+            echo $html->link($videoTrack['VideoTrack']['digital_artefact_link'],
+                             $videoTrack['VideoTrack']['digital_artefact_link'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
 		</td>
 		<td>
-			<?php echo $videoTrack['VideoTrack']['composer']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['performance_date']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['copyright_holders']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['copyright_start_date']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['comments']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['keywords']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['digital_artefact_link']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['video_album_id']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['synonyms']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['created']; ?>
-		</td>
-		<td>
-			<?php echo $videoTrack['VideoTrack']['modified']; ?>
+			<?php echo
+                $html->link(__($videoTrack['VideoAlbum']['title'], true),
+                    array('controller'=>'VideoAlbums', 'action'=>'view', $videoTrack['VideoAlbum']['id']));
+            ?>
 		</td>
 		<td class="actions">
 			<?php echo $html->link(__('View', true), array('action'=>'view', $videoTrack['VideoTrack']['id'])); ?>
