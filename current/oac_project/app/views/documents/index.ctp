@@ -8,41 +8,16 @@ echo $paginator->counter(array(
 ?></p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $paginator->sort('id');?></th>
 	<th><?php echo $paginator->sort('oac_ref_no');?></th>
-	<th><?php echo $paginator->sort('doc_type_id');?></th>
-	<th><?php echo $paginator->sort('specified_doc_type');?></th>
 	<th><?php echo $paginator->sort('collection_title');?></th>
-	<th><?php echo $paginator->sort('source');?></th>
-	<th><?php echo $paginator->sort('aquisition_date');?></th>
 	<th><?php echo $paginator->sort('title');?></th>
 	<th><?php echo $paginator->sort('edition');?></th>
 	<th><?php echo $paginator->sort('authors');?></th>
-	<th><?php echo $paginator->sort('contributors');?></th>
-	<th><?php echo $paginator->sort('publisher');?></th>
-	<th><?php echo $paginator->sort('publication_date');?></th>
-	<th><?php echo $paginator->sort('isbn_issn');?></th>
-	<th><?php echo $paginator->sort('series');?></th>
-	<th><?php echo $paginator->sort('description');?></th>
-	<th><?php echo $paginator->sort('doc_language_id');?></th>
 	<th><?php echo $paginator->sort('subject');?></th>
-	<th><?php echo $paginator->sort('copies');?></th>
-	<th><?php echo $paginator->sort('location');?></th>
 	<th><?php echo $paginator->sort('oac_url');?></th>
-	<th><?php echo $paginator->sort('digital_size');?></th>
-	<th><?php echo $paginator->sort('comments');?></th>
-	<th><?php echo $paginator->sort('contents_page');?></th>
-	<th><?php echo $paginator->sort('keywords');?></th>
-	<th><?php echo $paginator->sort('copyright_start_date');?></th>
-	<th><?php echo $paginator->sort('copyright_holder');?></th>
 	<th><?php echo $paginator->sort('digital_artefact_link');?></th>
-	<th><?php echo $paginator->sort('compiler_id');?></th>
-	<th><?php echo $paginator->sort('specified_compiler');?></th>
 	<th><?php echo $paginator->sort('video_album_id');?></th>
 	<th><?php echo $paginator->sort('audio_album_id');?></th>
-	<th><?php echo $paginator->sort('login_level_id');?></th>
-	<th><?php echo $paginator->sort('created');?></th>
-	<th><?php echo $paginator->sort('modified');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
 <?php
@@ -55,25 +30,10 @@ foreach ($documents as $document):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
-			<?php echo $document['Document']['id']; ?>
-		</td>
-		<td>
 			<?php echo $document['Document']['oac_ref_no']; ?>
 		</td>
 		<td>
-			<?php echo $document['Document']['doc_type_id']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['specified_doc_type']; ?>
-		</td>
-		<td>
 			<?php echo $document['Document']['collection_title']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['source']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['aquisition_date']; ?>
 		</td>
 		<td>
 			<?php echo $document['Document']['title']; ?>
@@ -85,79 +45,33 @@ foreach ($documents as $document):
 			<?php echo $document['Document']['authors']; ?>
 		</td>
 		<td>
-			<?php echo $document['Document']['contributors']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['publisher']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['publication_date']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['isbn_issn']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['series']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['description']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['doc_language_id']; ?>
-		</td>
-		<td>
 			<?php echo $document['Document']['subject']; ?>
 		</td>
 		<td>
-			<?php echo $document['Document']['copies']; ?>
+			<?php
+            echo $html->link($document['Document']['oac_url'],
+                             $document['Document']['oac_url'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
 		</td>
 		<td>
-			<?php echo $document['Document']['location']; ?>
+			<?php
+            echo $html->link($document['Document']['digital_artefact_link'],
+                             $document['Document']['digital_artefact_link'],
+                             array('class' => 'button', 'target' => '_blank'));
+            ?>
 		</td>
 		<td>
-			<?php echo $document['Document']['oac_url']; ?>
+   			<?php echo
+                $html->link(__($document['VideoAlbum']['title'], true),
+                    array('controller'=>'VideoAlbums', 'action'=>'view', $document['VideoAlbum']['id']));
+            ?>
 		</td>
 		<td>
-			<?php echo $document['Document']['digital_size']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['comments']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['contents_page']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['keywords']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['copyright_start_date']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['copyright_holder']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['digital_artefact_link']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['compiler_id']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['specified_compiler']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['video_album_id']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['audio_album_id']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['login_level_id']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['created']; ?>
-		</td>
-		<td>
-			<?php echo $document['Document']['modified']; ?>
+   			<?php echo
+                $html->link(__($document['AudioAlbum']['title'], true),
+                    array('controller'=>'AudioAlbums', 'action'=>'view', $document['AudioAlbum']['id']));
+            ?>
 		</td>
 		<td class="actions">
 			<?php echo $html->link(__('View', true), array('action'=>'view', $document['Document']['id'])); ?>
