@@ -151,11 +151,6 @@
 			<?php echo $videoAlbum['VideoAlbum']['oac_url']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Specified Compiler'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $videoAlbum['VideoAlbum']['specified_compiler']; ?>
-			&nbsp;
-		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Digital Artefact Link'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $videoAlbum['VideoAlbum']['digital_artefact_link']; ?>

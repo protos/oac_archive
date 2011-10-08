@@ -5,7 +5,7 @@ class VideoAlbumsController extends AppController {
 	var $helpers = array('Html', 'Form', 'Javascript');
 
 	function index() {
-		$this->VideoAlbum->recursive = 0;
+		$this->VideoAlbum->recursive = -1;
 		$this->set('videoAlbums', $this->paginate());
 	}
 
@@ -15,6 +15,17 @@ class VideoAlbumsController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		$this->set('videoAlbum', $this->VideoAlbum->read(null, $id));
+	}
+
+    function viewSongs($id) {
+        if(isset($id) && $id != null) {
+            $opts = array(
+                'conditions' => array(
+                'video_album_id' => $id
+            ));
+            $videoTracks = $this->VideoAlbum->VideoTrack->find('all', $opts);
+            $this->set('videoTracks', $videoTracks);
+        }
 	}
 
 	function add() {

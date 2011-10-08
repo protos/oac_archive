@@ -26,7 +26,10 @@ foreach ($audioTracks as $audioTrack):
 			<?php echo $audioTrack['AudioTrack']['track_no']; ?>
 		</td>
 		<td>
-			<?php echo $audioTrack['AudioTrack']['title']; ?>
+   			<?php echo
+                $html->link(__($audioTrack['AudioTrack']['title'], true),
+                    array('controller'=>'AudioTracks', 'action'=>'view', $audioTrack['AudioTrack']['id']));
+            ?>
 		</td>
 		<td>
 			<?php echo $audioTrack['AudioTrack']['primary_performers']; ?>

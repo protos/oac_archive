@@ -59,7 +59,8 @@ class VideoAlbum extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
+		)
+		/*
 		'VideoTrack' => array(
 			'className' => 'VideoTrack',
 			'foreignKey' => 'video_album_id',
@@ -68,6 +69,7 @@ class VideoAlbum extends AppModel {
 			'fields' => '',
 			'order' => ''
 		)
+		*/
 	);
 
 	var $hasMany = array(

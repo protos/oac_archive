@@ -35,7 +35,10 @@ foreach ($videoAlbums as $videoAlbum):
 			<?php echo $videoAlbum['VideoAlbum']['collection_title']; ?>
 		</td>
 		<td>
-			<?php echo $videoAlbum['VideoAlbum']['title']; ?>
+            <?php echo $html->link(__($videoAlbum['VideoAlbum']['title'], true),
+                    array('action'=>'viewSongs',
+                          $videoAlbum['VideoAlbum']['id']));
+            ?>
 		</td>
 		<td>
 			<?php echo $videoAlbum['VideoAlbum']['artists']; ?>

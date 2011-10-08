@@ -8,29 +8,12 @@ echo $paginator->counter(array(
 ?></p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<!--
-    <th><?php echo $paginator->sort('id');?></th>
--->
     <th><?php echo $paginator->sort('track_no');?></th>
 	<th><?php echo $paginator->sort('title');?></th>
 	<th><?php echo $paginator->sort('primary_performers');?></th>
-<!--
-    <th><?php echo $paginator->sort('primary_instruments');?></th>
--->
     <th><?php echo $paginator->sort('genre');?></th>
 	<th><?php echo $paginator->sort('duration');?></th>
-<!--
-    <th><?php echo $paginator->sort('performance_date');?></th>
-    <th><?php echo $paginator->sort('composer');?></th>
-    <th><?php echo $paginator->sort('copyright_start_date');?></th>
-	<th><?php echo $paginator->sort('copyright_holder');?></th>
-    <th><?php echo $paginator->sort('comments');?></th>
--->
     <th><?php echo $paginator->sort('digital_artefact_link');?></th>
-<!--
-    <th><?php echo $paginator->sort('synonyms');?></th>
-	<th><?php echo $paginator->sort('keywords');?></th>
--->
 	<th><?php echo $paginator->sort('audio_album_id');?></th>
     <th><?php echo $paginator->sort('created');?></th>
 	<th><?php echo $paginator->sort('modified');?></th>
@@ -45,11 +28,6 @@ foreach ($audioTracks as $audioTrack):
 	}
 ?>
 	<tr<?php echo $class;?>>
-<!--
-        <td>
-			<?php echo $audioTrack['AudioTrack']['id']; ?>
-		</td>
--->
         <td>
 			<?php echo $audioTrack['AudioTrack']['track_no']; ?>
 		</td>
@@ -59,34 +37,12 @@ foreach ($audioTracks as $audioTrack):
 		<td>
 			<?php echo $audioTrack['AudioTrack']['primary_performers']; ?>
 		</td>
-<!--
-        <td>
-			<?php echo $audioTrack['AudioTrack']['primary_instruments']; ?>
-		</td>
--->
         <td>
 			<?php echo $audioTrack['AudioTrack']['genre']; ?>
 		</td>
 		<td>
 			<?php echo $audioTrack['AudioTrack']['duration']; ?>
 		</td>
-<!--
-        <td>
-			<?php echo $audioTrack['AudioTrack']['performance_date']; ?>
-		</td>
-        <td>
-			<?php echo $audioTrack['AudioTrack']['composer']; ?>
-		</td>
-		<td>
-			<?php echo $audioTrack['AudioTrack']['copyright_start_date']; ?>
-		</td>
-		<td>
-			<?php echo $audioTrack['AudioTrack']['copyright_holder']; ?>
-		</td>
-        <td>
-			<?php echo $audioTrack['AudioTrack']['comments']; ?>
-		</td>
--->
         <td>
 			<?php
             echo $html->link($audioTrack['AudioTrack']['digital_artefact_link'],
@@ -94,14 +50,6 @@ foreach ($audioTracks as $audioTrack):
                              array('class' => 'button', 'target' => '_blank'));
             ?>
         </td>
-<!--
-        <td>
-			<?php echo $audioTrack['AudioTrack']['synonyms']; ?>
-		</td>
-		<td>
-			<?php echo $audioTrack['AudioTrack']['keywords']; ?>
-		</td>
--->
         <td>
 			<?php echo
                 $html->link(__($audioTrack['AudioAlbum']['title'], true),

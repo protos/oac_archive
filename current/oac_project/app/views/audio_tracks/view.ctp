@@ -1,19 +1,14 @@
 <div class="audioTracks view">
 <h2><?php  echo $audioTrack['AudioTrack']['title'];?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioTrack['AudioTrack']['id']; ?>
+			<?php echo $audioTrack['AudioTrack']['title']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Track No'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $audioTrack['AudioTrack']['track_no']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioTrack['AudioTrack']['title']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Primary Performers'); ?></dt>

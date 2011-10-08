@@ -1,17 +1,28 @@
 <div class="audioAlbums view">
 <h2><?php  echo $audioAlbum['AudioAlbum']['title']; ?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['id']; ?>
+			<?php echo $audioAlbum['AudioAlbum']['title']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Audio Album Type Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Description'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['audio_album_type_id']; ?>
+			<?php echo $audioAlbum['AudioAlbum']['description']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Specified Audio Album Type'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Artists'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $audioAlbum['AudioAlbum']['artists']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Audio Album Type'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+
+			<?php echo $audioAlbum['AudioAlbumType']['name']; ?>
+			&nbsp;
+		</dd>
+        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Specified Audio Album Type'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $audioAlbum['AudioAlbum']['specified_audio_album_type']; ?>
 			&nbsp;
@@ -34,21 +45,6 @@
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Collection Title'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $audioAlbum['AudioAlbum']['collection_title']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['title']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Description'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['description']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Artists'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['artists']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Series'); ?></dt>
@@ -168,14 +164,14 @@
             ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Login Level Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Login Level'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['login_level_id']; ?>
+			<?php echo $audioAlbum['LoginLevel']['name']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Compiler Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Compiler'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $audioAlbum['AudioAlbum']['compiler_id']; ?>
+			<?php echo $audioAlbum['Compiler']['name']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Specified Compiler'); ?></dt>

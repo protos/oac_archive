@@ -71,7 +71,7 @@
                     echo $content_for_layout; 
                 ?>
             </div>
-                <div id="footer"></div>
+            <div id="footer"></div>
 
         </div>
 	<?php echo $cakeDebug; ?>

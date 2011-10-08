@@ -5,7 +5,7 @@ class AudioAlbumsController extends AppController {
 	var $helpers = array('Html', 'Form', 'Javascript');
 
 	function index() {
-		$this->AudioAlbum->recursive = 0;
+		$this->AudioAlbum->recursive = -1;
 		$this->set('audioAlbums', $this->paginate());
 	}
 

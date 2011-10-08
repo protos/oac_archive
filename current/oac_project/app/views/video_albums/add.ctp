@@ -37,7 +37,6 @@
 			echo $form->input('equipment');
 			echo $form->input('software_package');
 			echo $form->input('oac_url');
-			echo $form->input('specified_compiler');
 			echo $form->input('digital_artefact_link');
 			echo $form->input('audio_album_id');
 			echo $form->input('login_level_id');
